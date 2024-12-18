@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berat Badan Obesitas</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1 id="greeting">Hai, Nama!</h1> 
+        <h1>Berat Badan Obesitas</h1>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>Tujuan utamanya adalah menurunkan berat badan secara bertahap melalui pola makan yang seimbang, rendah kalori, dan kaya nutrisi. Fokus pada makanan yang membantu mengontrol nafsu makan dan meningkatkan metabolisme.</p>
+        </section>
+
+        <section class="recommended">
+            <h2>Makanan yang Disarankan</h2>
+            <ul>
+                <li><strong>Sayuran dan Buah-buahan:</strong> Sayuran hijau (seperti bayam, brokoli, kale) dan buah-buahan rendah kalori (seperti apel, jeruk, berry) kaya serat, yang membuat kenyang lebih lama dan rendah kalori.</li>
+                <li><strong>Protein Lean:</strong> Pilih sumber protein tanpa lemak seperti dada ayam, ikan (salmon, tuna), telur, tempe, tahu, atau kacang-kacangan. Protein membantu meningkatkan rasa kenyang dan membangun massa otot.</li>
+                <li><strong>Whole Grains:</strong> Karbohidrat kompleks seperti beras merah, quinoa, oatmeal, dan roti gandum.</li>
+                <li><strong>Kacang-kacangan dan Biji-bijian:</strong> Kacang almond, kenari, chia, atau biji.</li>
+                <li><strong>Minyak Sehat:</strong> Gunakan minyak zaitun atau minyak kelapa untuk memasak karena mengandung lemak sehat yang mendukung metabolisme.</li>
+            </ul>
+        </section>
+
+        <section class="limitations">
+            <h2>Yang Harus Dibatasi</h2>
+            <ul>
+                <li><strong>Gula Tambahan dan Makanan Olahan:</strong> Hindari makanan dan minuman yang tinggi gula dan lemak jenuh, seperti makanan cepat saji, kue-kue, permen, dan minuman manis.</li>
+                <li><strong>Karbohidrat Sederhana:</strong> Batasi konsumsi roti putih, pasta putih, dan makanan tinggi karbohidrat olahan lainnya yang dapat menyebabkan lonjakan gula darah dan penyimpanan lemak.</li>
+            </ul>
+        </section>
+
+        <!-- Tombol Rekomendasi Air Minum -->
+        <div class="button-container" style="text-align: center; margin-top: 20px;">
+            <a href="air-obesitas.html">
+                <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Rekomendasi Air Minum
+                </button>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weight Tracker Control</p>
+    </footer>
+    
+    <script>
+        // Ambil data dari localStorage dan tampilkan nama
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+            // Menampilkan nama di elemen dengan id "greeting"
+            document.getElementById('greeting').textContent = `Hai, ${userData.name}!`;
+        }
+    </script>
+</body>
+</html>

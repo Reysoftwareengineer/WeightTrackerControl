@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Berat Badan</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background-color: #1e88e5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .report {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .report h2 {
+            text-align: center;
+            color: #1e88e5;
+            margin-bottom: 20px;
+        }
+
+        .report p {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .report-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #1e88e5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1565c0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #1e88e5;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Laporan Berat Badan Anda</h1>
+    </header>
+
+    <main class="content">
+        <!-- Section for Report -->
+        <section class="report">
+            <h2>Hasil Laporan</h2>
+            <div class="report-section">
+                <p id="reportName"></p>
+                <p id="reportGender"></p>
+                <p id="reportBirthDate"></p>
+                <p id="reportWeighDate"></p>
+                <p id="reportHeight"></p>
+                <p id="reportWeight"></p>
+                <p id="reportWaterNeed"></p>
+                <p id="reportExerciseRecommendation"></p>
+            </div>
+            
+            <!-- Tombol untuk mencetak laporan -->
+            <button onclick="printReport()">Cetak Laporan</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weight Tracker Control</p>
+    </footer>
+
+    <script>
+        // Ambil data dari localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        // Menampilkan data dari localStorage jika ada
+        if (userData) {
+            document.getElementById('reportName').textContent = `Nama: ${userData.name}`;
+            document.getElementById('reportGender').textContent = `Jenis Kelamin: ${userData.gender === 'male' ? 'Laki-laki' : 'Perempuan'}`;
+            document.getElementById('reportBirthDate').textContent = `Tanggal Lahir: ${userData.birthDate}`;
+            document.getElementById('reportWeighDate').textContent = `Tanggal Penimbangan: ${userData.weighDate}`;
+            document.getElementById('reportHeight').textContent = `Tinggi Badan: ${userData.height} cm`;
+            document.getElementById('reportWeight').textContent = `Berat Badan: ${userData.weight} kg`;
+            document.getElementById('reportWaterNeed').textContent = `Kebutuhan Air: ${userData.waterNeed} L/hari`;
+            document.getElementById('reportExerciseRecommendation').textContent = `Rekomendasi Olahraga: ${userData.exerciseRecommendation}`;
+        } else {
+            document.querySelector('.report').innerHTML = '<p>Data tidak ditemukan. Silakan kembali ke halaman awal untuk mengisi data.</p>';
+        }
+
+        // Fungsi untuk mencetak laporan
+        function printReport() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

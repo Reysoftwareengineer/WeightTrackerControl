@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berat Badan Kurang</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1 id="greeting">Hai, Nama!</h1> 
+        <h1>Berat Badan Kurang</h1>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>Tujuan utama adalah menaikkan berat badan dengan meningkatkan asupan kalori secara sehat dan mengedepankan nutrisi yang seimbang untuk mendukung pertumbuhan dan pemulihan tubuh.</p>
+        </section>
+
+        <section class="recommended">
+            <h2>Makanan yang Disarankan</h2>
+            <ul>
+                <li><strong>Makanan Tinggi Kalori Sehat:</strong> Konsumsi makanan dengan kalori padat namun sehat seperti alpukat, kacang-kacangan, biji-bijian, dan minyak sehat. Ini akan membantu menambah kalori tanpa mengorbankan kualitas nutrisi.</li>
+                <li><strong>Protein Berkualitas Tinggi:</strong> Makanan yang kaya protein seperti daging tanpa lemak, telur, ikan, kacang-kacangan, dan produk susu rendah lemak membantu memperbaiki otot dan jaringan tubuh.</li>
+                <li><strong>Karbohidrat Sehat:</strong> Konsumsi karbohidrat kompleks yang padat energi seperti nasi merah, pasta gandum utuh, quinoa, kentang manis, dan oatmeal.</li>
+                <li><strong>Smoothie atau Shake Kalori Tinggi:</strong> Membuat smoothie dengan bahan seperti pisang, susu (atau susu nabati), selai kacang, dan protein powder adalah cara efektif untuk menambah kalori dengan cara yang mudah dicerna.</li>
+                <li><strong>Makanan Berlemak Sehat:</strong> Selain minyak sehat, konsumsi makanan seperti salmon, tuna, keju, dan yogurt penuh lemak untuk menambah kalori.</li>
+            </ul>
+        </section>
+
+        <section class="limitations">
+            <h2>Yang Harus Dibatasi</h2>
+            <p><strong>Hindari makanan yang kaya gula olahan atau makanan cepat saji karena meskipun tinggi kalori, mereka tidak memberikan manfaat gizi dan dapat meningkatkan risiko penyakit jangka panjang.</strong></p>
+        </section>
+
+        <div class="button-container" style="text-align: center; margin-top: 20px;">
+            <a href="air-kurang.html">
+                <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Rekomendasi Air Minum
+                </button>
+            </a>
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Berat Badan Ideal</p>
+    </footer>
+    <script>
+        // Ambil data dari localStorage dan tampilkan nama
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+            // Menampilkan nama di elemen dengan id "greeting"
+            document.getElementById('greeting').textContent = `Hai, ${userData.name}!`;
+        }
+    </script>
+</body>
+</html>
