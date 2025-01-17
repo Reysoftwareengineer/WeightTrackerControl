@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berat Badan Obesitas</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Air untuk Berat Badan Obesitas</h1>
+    </header>
+    <main class="content">
+        <section class="intro">
+            <p>
+                Dalam proses hidrasi dan pembakaran lemak, air membantu proses pembakaran lemak, 
+                dan dehidrasi dapat memperlambat metabolisme. Pada proses detoksifikasi, air juga 
+                penting dalam proses ini karena membantu menghilangkan racun dari tubuh yang 
+                bisa terakumulasi pada orang dengan obesitas.
+            </p>
+            <p>
+                Maka pada berat badan dengan kategori ini perlu mengkonsumsi :
+            </p>
+            <p><strong id="water-need">... L/hari</strong></p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="fluid-balance.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Perhitungan Cairan
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <section class="recommended">
+            <h2>Rekomendasi Minuman Herbal</h2>
+            <p>
+                Untuk hasil yang maksimal, kami juga merekomendasikan racikan minuman herbal 
+                yang bisa Anda buat sendiri di rumah:
+            </p>
+            <ul>
+                <li><strong>Air putih dengan lemon:</strong> Tambahkan irisan lemon ke dalam air putih untuk membantu meningkatkan metabolisme dan membakar lemak.</li>
+                <li><strong>Air putih dengan jahe:</strong> Jahe memiliki sifat anti-inflamasi yang dapat membantu mengurangi peradangan pada tubuh dan meningkatkan metabolisme.</li>
+                <li><strong>Air putih dengan kayu manis:</strong> Kayu manis dapat membantu mengurangi kadar gula darah dan meningkatkan metabolisme.</li>
+            </ul>
+        </section>
+
+        <section class="exercise">
+            <h2>Rekomendasi Olahraga</h2>
+            <p>
+                Untuk membantu menurunkan berat badan secara sehat, kami juga merekomendasikan beberapa jenis olahraga yang aman dan efektif. Klik tombol di bawah untuk mengetahui lebih lanjut.
+            </p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="olahraga-obesitas.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Rekomendasi Olahraga
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Berat Badan Obesitas</p>
+    </footer>
+    <script>
+        // Ambil data dari localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData && userData.waterNeed) {
+            // Tampilkan kebutuhan air
+            document.getElementById('water-need').textContent = `${userData.waterNeed} L/hari`;
+        } else {
+            // Default jika data tidak tersedia
+            document.getElementById('water-need').textContent = 'Data tidak tersedia';
+        }
+    </script>
+</body>
+</html>

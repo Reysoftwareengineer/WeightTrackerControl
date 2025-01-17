@@ -1,0 +1,169 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1e88e5, #6ab7ff);
+    color: #333;
+    overflow-x: hidden;
+    transition: background 0.5s ease;
+}
+
+/* Header Styling */
+.header {
+    background: #1565c0;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Main Content Styling */
+.content {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+    transition: transform 0.3s ease;
+    text-align: justify; /* Menambahkan justify pada teks di konten */
+}
+
+.content:hover {
+    transform: scale(1.02);
+}
+
+.content section {
+    margin-bottom: 30px;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    color: #1e88e5;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #1e88e5;
+    display: inline-block;
+    padding-bottom: 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.content h2:hover {
+    color: #1565c0;
+    border-bottom: 3px solid #1565c0;
+}
+
+.content ul {
+    list-style: disc inside;
+    margin: 10px 0 0 20px;
+    padding: 0;
+    text-align: justify; /* Menambahkan justify pada daftar */
+}
+
+.content ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.content ul li:hover {
+    color: #1e88e5;
+    transform: translateX(10px);
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #1565c0;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.5s ease;
+}
+
+.footer:hover {
+    background: #1e88e5;
+}
+
+/* Button Styling */
+button {
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1565c0;
+    transform: scale(1.1);
+}
+
+button:active {
+    background-color: #0d47a1;
+    transform: scale(1.05);
+}
+.report-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.centered-button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.centered-button:hover {
+    background-color: #1565c0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

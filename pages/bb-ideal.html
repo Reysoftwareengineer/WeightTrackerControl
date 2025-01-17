@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berat Badan Ideal</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1 id="greeting">Hai, Nama!</h1> <!-- Ini akan digantikan dengan nama pengguna -->
+        <h2>Berat Badan Ideal</h2> <!-- Judul yang ditambahkan -->
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>Tujuan utama adalah mempertahankan berat badan sehat dengan pola makan yang seimbang dan menjaga keseimbangan antara asupan kalori dan pengeluaran energi.</p>
+        </section>
+
+        <section class="recommended">
+            <h2>Makanan yang Disarankan</h2>
+            <ul>
+                <li><strong>Sayuran dan Buah-buahan:</strong> Makanlah berbagai sayuran (terutama sayuran berwarna hijau dan cerah) dan buah-buahan yang kaya akan vitamin, mineral, dan serat. Contoh: brokoli, bayam, wortel, tomat, berry, apel, jeruk.</li>
+                <li><strong>Protein Berkualitas:</strong> Untuk mempertahankan massa otot dan mendukung metabolisme, pilih sumber protein seperti ayam, ikan, telur, tempe, dan yogurt rendah lemak.</li>
+                <li><strong>Karbohidrat Sehat:</strong> Konsumsi sumber karbohidrat kompleks seperti oatmeal, quinoa, nasi merah, dan ubi jalar untuk memberikan energi yang stabil dan meningkatkan pencernaan.</li>
+                <li><strong>Lemak Sehat:</strong> Fokus pada lemak sehat yang ditemukan dalam alpukat, minyak zaitun, kacang-kacangan, dan ikan berlemak seperti salmon. Lemak sehat membantu fungsi otak dan sistem kekebalan tubuh.</li>
+                <li><strong>Serat Tinggi:</strong> Mengonsumsi makanan kaya serat seperti gandum utuh, biji-bijian, dan sayuran membantu pencernaan dan menjaga rasa kenyang lebih lama.</li>
+            </ul>
+        </section>
+
+        <section class="limitations">
+            <h2>Yang Harus Dibatasi</h2>
+            <ul>
+                <li><strong>Makanan Olahan:</strong> Makanan cepat saji, camilan kemasan, dan makanan yang mengandung banyak bahan tambahan seperti pengawet dan pewarna buatan sebaiknya dihindari.</li>
+                <li><strong>Gula Tambahan:</strong> Hindari konsumsi gula tambahan dari minuman manis, kue, atau permen. Gula berlebih bisa menyebabkan lonjakan kadar gula darah dan memengaruhi kesehatan jangka panjang.</li>
+            </ul>
+        </section>
+        <div class="button-container" style="text-align: center; margin-top: 20px;">
+            <a href="air-ideal.html">
+                <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                    Rekomendasi Air Minum
+                </button>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Berat Badan Ideal</p>
+    </footer>
+    <script>
+        // Ambil data dari localStorage dan tampilkan nama
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData) {
+            // Menampilkan nama di elemen dengan id "greeting"
+            document.getElementById('greeting').textContent = `Hai, ${userData.name}!`;
+        }
+    </script>
+
+    <script src="../js/script-nama.js"></script> <!-- Script untuk menampilkan nama -->
+</body>
+</html>

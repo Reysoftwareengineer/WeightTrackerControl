@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Tracker Control</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Kotak Logo -->
+        <div class="logo-box">
+            <img src="Gambar/logo.jpeg" alt="Logo" class="logo">
+        </div>
+        
+        <h1>Weight Tracker Control</h1>
+        <p class="description">Lacak dan hitung berat badan ideal Anda dengan mudah dan akurat.</p>
+        <form id="biodataForm">
+            <div class="form-group">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Jenis Kelamin:</label>
+                <select id="gender" required>
+                    <option value="">Pilih</option>
+                    <option value="male">Laki-laki</option>
+                    <option value="female">Perempuan</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Tanggal Lahir:</label>
+                <input type="date" id="birthDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weighDate">Tanggal Penimbangan:</label>
+                <input type="date" id="weighDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Tinggi Badan (cm):</label>
+                <input type="number" id="height" placeholder="Masukkan tinggi badan Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Berat Badan (kg):</label>
+                <input type="number" id="weight" placeholder="Masukkan berat badan Anda" required>
+            </div>
+
+            <button type="button" id="calculateButton">Hitung Berat Badan</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('calculateButton').addEventListener('click', function() {
+            // Ambil data dari form
+            const name = document.getElementById('name').value;
+            const gender = document.getElementById('gender').value;
+            const birthDate = document.getElementById('birthDate').value;
+            const weighDate = document.getElementById('weighDate').value;
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+
+            // Validasi data
+            if (!name || !gender || !birthDate || !weighDate || !height || !weight) {
+                alert('Harap lengkapi semua data.');
+                return;
+            }
+
+            // Hitung IMT (Indeks Massa Tubuh)
+            const heightInMeters = height / 100;
+            const bmi = (weight / (heightInMeters ** 2)).toFixed(2);
+
+            // Tentukan kategori berat badan
+            let waterNeed, exerciseRecommendation, nextPage;
+            if (bmi < 18.5) {
+                nextPage = "pages/bb-kurang.html";
+                waterNeed = (weight * 0.033).toFixed(2); // Liter per hari
+                exerciseRecommendation = "Olahraga ringan untuk meningkatkan massa otot seperti yoga atau jalan santai.";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                nextPage = "pages/bb-ideal.html";
+                waterNeed = (weight * 0.035).toFixed(2); // Liter per hari
+                exerciseRecommendation = "Jogging, bersepeda, dan latihan kekuatan untuk menjaga kebugaran.";
+            } else {
+                nextPage = "pages/bb-obesitas.html";
+                waterNeed = (weight * 0.033).toFixed(2); // Liter per hari
+                exerciseRecommendation = "Jalan kaki, renang, dan latihan kekuatan ringan.";
+            }
+
+            // Simpan data ke localStorage
+            const userData = {
+                name,
+                gender,
+                birthDate,
+                weighDate,
+                height,
+                weight,
+                bmi,
+                waterNeed,
+                exerciseRecommendation
+            };
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Pindah ke halaman hasil
+            window.location.href = nextPage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air untuk Berat Badan Kurang</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Air untuk Berat Badan Kurang</h1>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>Dalam pencernaan dan penyerapan nutrisi, hidrasi yang baik penting untuk mendukung pencernaan dan penyerapan nutrisi yang lebih baik, yang sangat penting bagi mereka yang mencoba menambah berat badan.</p>
+            <p>Untuk meningkatkan nafsu makan, konsumsi air yang cukup dapat membantu meningkatkan nafsu makan, terutama jika seseorang sering merasa lesu atau tidak tertarik makan.</p>
+        </section>
+
+        <section class="recommendation">
+            <h2>Kebutuhan Air Harian</h2>
+            <p>Maka pada berat badan dengan kategori ini perlu mengkonsumsi:</p>
+            <p><strong id="water-need">... L/hari</strong></p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="fluid-balance.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Perhitungan Cairan
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <section class="herbal-drinks">
+            <h2>Racikan Minuman Herbal</h2>
+            <p>Untuk hasil yang maksimal kami juga merekomendasikan racikan minuman herbal yang bisa Anda buat sendiri di rumah:</p>
+            <ol>
+                <li><strong>Air putih dengan madu:</strong> Tambahkan madu ke dalam air putih untuk membantu meningkatkan kalori dan memberikan energi.</li>
+                <li><strong>Air putih dengan susu:</strong> Susu dapat membantu meningkatkan kalori dan memberikan protein yang dibutuhkan oleh tubuh.</li>
+                <li><strong>Air putih dengan buah-buahan:</strong> Tambahkan potongan buah-buahan seperti apel, pisang, atau jeruk ke dalam air putih untuk membantu meningkatkan kalori dan memberikan nutrisi.</li>
+            </ol>
+        </section>
+        <section class="exercise">
+            <h2>Rekomendasi Olahraga</h2>
+            <p>
+                Untuk membantu menurunkan berat badan secara sehat, kami juga merekomendasikan beberapa jenis olahraga yang aman dan efektif. Klik tombol di bawah untuk mengetahui lebih lanjut.
+            </p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="olahraga-kurang.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Rekomendasi Olahraga
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weight Tracker Control</p>
+    </footer>
+
+    <script>
+        // Ambil data dari localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData && userData.waterNeed) {
+            // Tampilkan kebutuhan air
+            document.getElementById('water-need').textContent = `${userData.waterNeed} L/hari`;
+        } else {
+            // Default jika data tidak tersedia
+            document.getElementById('water-need').textContent = 'Data tidak tersedia';
+        }
+    </script>
+</body>
+</html>

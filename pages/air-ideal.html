@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Minum untuk Berat Badan Ideal</title>
+    <link rel="stylesheet" href="../css/style_bb.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Air Minum untuk Berat Badan Ideal</h1>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>
+                Untuk mendukung metabolisme, konsumsi air sangat penting untuk menjaga metabolisme yang efisien dan mendukung proses pencernaan serta penyerapan nutrisi. 
+                Air juga membantu meningkatkan performa fisik dan daya tahan tubuh selama aktivitas fisik. Dalam menjaga keseimbangan tubuh, hidrasi yang tepat membantu menjaga 
+                keseimbangan elektrolit, suhu tubuh, dan fungsi organ.
+            </p>
+        </section>
+
+        <section class="water-intake">
+            <h2>Kebutuhan Air</h2>
+            <p>Maka berat badan dalam kategori ini perlu mengkonsumsi :</p>
+            <p><strong id="water-need">... L/hari</strong></p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="fluid-balance.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Perhitungan Cairan
+                    </button>
+                </a>
+            </div>
+        </section>
+
+        <section class="herbal-recipes">
+            <h2>Racikan Minuman Herbal</h2>
+            <p>
+                Untuk hasil yang maksimal, kami juga merekomendasikan racikan minuman herbal yang bisa Anda buat sendiri di rumah:
+            </p>
+            <ul>
+                <li><strong>Air putih dengan jeruk nipis:</strong> Jeruk nipis dapat membantu meningkatkan metabolisme dan membakar lemak.</li>
+                <li><strong>Air putih dengan mentimun:</strong> Mentimun dapat membantu mengurangi peradangan pada tubuh dan meningkatkan metabolisme.</li>
+                <li><strong>Air putih dengan daun mint:</strong> Daun mint dapat membantu meningkatkan metabolisme dan memberikan rasa segar.</li>
+            </ul>
+        </section>
+        <section class="exercise">
+            <h2>Rekomendasi Olahraga</h2>
+            <p>
+                Untuk membantu menurunkan berat badan secara sehat, kami juga merekomendasikan beberapa jenis olahraga yang aman dan efektif. Klik tombol di bawah untuk mengetahui lebih lanjut.
+            </p>
+            <div class="button-container" style="text-align: center; margin-top: 20px;">
+                <a href="olahraga-ideal.html">
+                    <button style="padding: 12px 20px; font-size: 1rem; background-color: #1e88e5; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">
+                        Rekomendasi Olahraga
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Weight Tracker Control</p>
+    </footer>
+    <script>
+        // Ambil data dari localStorage
+        const userData = JSON.parse(localStorage.getItem('userData'));
+
+        if (userData && userData.waterNeed) {
+            // Tampilkan kebutuhan air
+            document.getElementById('water-need').textContent = `${userData.waterNeed} L/hari`;
+        } else {
+            // Default jika data tidak tersedia
+            document.getElementById('water-need').textContent = 'Data tidak tersedia';
+        }
+    </script>
+</body>
+</html>
