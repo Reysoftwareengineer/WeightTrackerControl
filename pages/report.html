@@ -100,6 +100,10 @@
                 <p id="reportWeight"></p>
                 <p id="reportWaterNeed"></p>
                 <p id="reportExerciseRecommendation"></p>
+                <!-- Tambahkan hasil perhitungan cairan -->
+                <p id="reportTotalIntake"></p>
+                <p id="reportTotalOutput"></p>
+                <p id="reportFluidBalance"></p>
             </div>
             
             <!-- Tombol untuk mencetak laporan -->
@@ -114,6 +118,7 @@
     <script>
         // Ambil data dari localStorage
         const userData = JSON.parse(localStorage.getItem('userData'));
+        const fluidData = JSON.parse(localStorage.getItem('fluidBalanceResult'));
 
         // Menampilkan data dari localStorage jika ada
         if (userData) {
@@ -125,8 +130,16 @@
             document.getElementById('reportWeight').textContent = `Berat Badan: ${userData.weight} kg`;
             document.getElementById('reportWaterNeed').textContent = `Kebutuhan Air: ${userData.waterNeed} L/hari`;
             document.getElementById('reportExerciseRecommendation').textContent = `Rekomendasi Olahraga: ${userData.exerciseRecommendation}`;
+        }
+
+        // Menampilkan data hasil perhitungan cairan jika ada
+        if (fluidData) {
+            document.getElementById('reportTotalIntake').textContent = `Total Masukan Cairan: ${fluidData.totalIntake} cc`;
+            document.getElementById('reportTotalOutput').textContent = `Total Keluaran Cairan: ${fluidData.totalOutput} cc`;
+            document.getElementById('reportFluidBalance').textContent = `Keseimbangan Cairan: ${fluidData.fluidBalance} cc`;
         } else {
-            document.querySelector('.report').innerHTML = '<p>Data tidak ditemukan. Silakan kembali ke halaman awal untuk mengisi data.</p>';
+            const fluidReportSection = document.querySelector('.report-section');
+            fluidReportSection.innerHTML += '<p>Data keseimbangan cairan tidak tersedia. Silakan lakukan perhitungan terlebih dahulu.</p>';
         }
 
         // Fungsi untuk mencetak laporan

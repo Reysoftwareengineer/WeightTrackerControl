@@ -45,6 +45,7 @@
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #0056b3;
@@ -84,6 +85,7 @@
         </form>
 
         <div id="result" class="result"></div>
+        <button onclick="goBack()">Kembali</button>
     </div>
 
     <script>
@@ -95,25 +97,48 @@
             const bakCount = parseInt(document.getElementById('bak').value) || 0;
             const medications = parseFloat(document.getElementById('medications').value) || 0;
 
-            // Constants for calculations
-            const babLoss = babCount * 250; // 250 cc per defecation
-            const bakLoss = bakCount * 150; // 150 cc per urination
+            const babLoss = babCount * 250;
+            const bakLoss = bakCount * 150;
 
-            // Total intake and output
             const totalIntake = water + liquidFood + medications;
             const totalOutput = babLoss + bakLoss;
 
-            // Fluid balance
             const fluidBalance = totalIntake - totalOutput;
 
-            // Display result
-            document.getElementById('result').innerHTML = `
+            const resultHTML = `
                 <h2>Hasil</h2>
                 <p><strong>Total Masukan:</strong> ${totalIntake.toFixed(2)} cc</p>
                 <p><strong>Total Keluaran:</strong> ${totalOutput.toFixed(2)} cc</p>
                 <p><strong>Keseimbangan Cairan:</strong> ${fluidBalance.toFixed(2)} cc</p>
             `;
+            document.getElementById('result').innerHTML = resultHTML;
+
+            const resultData = {
+                weight,
+                totalIntake: totalIntake.toFixed(2),
+                totalOutput: totalOutput.toFixed(2),
+                fluidBalance: fluidBalance.toFixed(2)
+            };
+            localStorage.setItem('fluidBalanceResult', JSON.stringify(resultData));
         }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        window.onload = () => {
+            const savedResult = localStorage.getItem('fluidBalanceResult');
+            if (savedResult) {
+                const result = JSON.parse(savedResult);
+                document.getElementById('result').innerHTML = `
+                    <h2>Hasil Terakhir</h2>
+                    <p><strong>Berat Badan:</strong> ${result.weight} kg</p>
+                    <p><strong>Total Masukan:</strong> ${result.totalIntake} cc</p>
+                    <p><strong>Total Keluaran:</strong> ${result.totalOutput} cc</p>
+                    <p><strong>Keseimbangan Cairan:</strong> ${result.fluidBalance} cc</p>
+                `;
+            }
+        };
     </script>
 </body>
 </html>
